@@ -1,0 +1,835 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\title{A PhD Survival Guide to Writing a Paper That Says Something Without Annoying Your Reviewer}
+\author{Axel A. Oscar}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This guide aims to possibly help in writing a scientific paper in a clear, structured, and credible way. Rather than proposing a rigid template, it explains the function of each part of a paper and the logic that connects them, from the abstract and introduction to the discussion and conclusion. It also highlights several common weaknesses, such as motivation that is too vague, poorly defined contributions, insufficient comparison with existing work, exaggerated claims, or imprecise writing. A final part focuses on writing style, frequent mistakes in English, as well as the visible effects of excessive use of AI in scientific writing. The goal is simple: to help the reader understand the problem, the contribution, the evidence, and the limits, without unnecessary complexity.
+\end{abstract}
+
+\tableofcontents
+
+\section{Purpose}
+
+A short guide with some advice on how to write a paper if this is your first time and you are completely lost. It is not a magic recipe, but rather a way to understand the expectations, to start in the most effective way, and to allow your reviewers and readers to understand your reasoning without getting lost or penalising you just because of small mistakes. Although basic, this guide is intended to be completed over time by annotations from the community in order to eventually create a complete and coherent guide while remaining as general as possible given everyone's expectations.
+
+A good paper is not a sequence of sections placed one after another. It is a progressive demonstration. Each part prepares the next one. Each paragraph should help the reader answer a precise question. If a section exists only because ``papers usually include that'', then there is already a problem.
+
+When you write, always think about the reader. Not the ideal reader who already knows your topic by heart, but an ordinary reader who, without knowing your work or your field, should still be able to understand without unnecessary effort:
+
+\begin{enumerate}[label=\arabic*.]
+    \item what problem is being addressed;
+    \item why this problem matters;
+    \item what is missing in the existing literature;
+    \item what exactly the paper contributes;
+    \item how this contribution was designed;
+    \item how it was evaluated;
+    \item what can honestly be concluded.
+\end{enumerate}
+
+In practice, almost all good papers follow a logical chain close to this one:
+\[
+\text{Context} \rightarrow \text{Problem} \rightarrow \text{Gap} \rightarrow \text{Contribution} \rightarrow \text{Evidence} \rightarrow \text{Limits} \rightarrow \text{Conclusion}
+\]
+
+If this chain is clear, the paper stands. If it is unclear, even a good idea may seem weak.
+
+\section{Abstract}
+
+The \textbf{abstract} is the densest summary of the paper. It is often the only part read before a quick decision: continue reading, cite the paper, or discard it. It should therefore be treated as a strategic text, not as a simple administrative summary.
+
+A good abstract quickly answers the following questions: what is the paper about, what is the precise problem, what do you contribute, how do you do it, and what is ultimately shown. It should not try to impress. It should inform.
+
+An effective abstract generally follows an implicit structure in five blocks:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Context:} what domain and what general need;
+    \item \textbf{Problem:} what specific difficulty;
+    \item \textbf{Approach:} what proposed solution or framework;
+    \item \textbf{Results:} what has been shown;
+    \item \textbf{Scope:} why it matters.
+\end{enumerate}
+
+In general, its implicit structure is based on five elements:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Context:} what domain and what general need;
+    \item \textbf{Problem:} what specific difficulty;
+    \item \textbf{Approach:} what proposed solution or framework;
+    \item \textbf{Results:} what has been shown;
+    \item \textbf{Scope:} why it matters.
+\end{enumerate}
+Depending on the venue, the required length varies. In many conferences and journals, it is around 150 to 250 words. You should always check the exact submission guidelines.
+
+\subsection*{What should be included}
+
+The important point is the following: an abstract must not be vague. If you propose a logic, an algorithm, a model, an architecture, a protocol, a proof framework, a tool, or an evaluation method, it must be named clearly. If you announce formal guarantees, a complexity analysis, a measured gain, an improvement in expressiveness, or an experimental validation, that should appear as well.
+
+\subsection*{What should be avoided}
+
+A common mistake is to write an abstract that remains at the level of intentions:
+\begin{quote}
+\textit{``In this paper, we discuss an important problem in cybersecurity and present an interesting solution.''}
+\end{quote}
+This sentence says almost nothing. The reader does not know what is being proposed, nor what has been demonstrated.
+
+A more useful formulation would be:
+\begin{quote}
+\textit{``We propose a timed probabilistic formalism for reasoning about adaptive cyber defense under bounded resources. We define its semantics, present a model-checking procedure, and evaluate it on representative attack scenarios. The results show that the formalism captures trade-offs that are not expressible in previous approaches.''}
+\end{quote}
+
+You should therefore avoid:
+\begin{itemize}
+    \item overly general sentences;
+    \item claims without technical content;
+    \item vague promises;
+    \item secondary details;
+    \item citations;
+    \item heavy notation;
+    \item unnecessary acronyms.
+\end{itemize}
+For example, do not waste words explaining an acronym or doing a mini related work survey.
+
+\subsection*{Examples of weak formulations in English}
+
+To avoid:
+\begin{itemize}
+    \item \textit{``In this paper, we discuss some interesting ideas.''}
+    \item \textit{``Several results are presented.''}
+    \item \textit{``The proposed method performs well.''}
+    \item \textit{``This topic is very important nowadays.''}
+\end{itemize}
+
+To prefer:
+\begin{itemize}
+    \item \textit{``We propose a timed probabilistic logic for reasoning about defense guarantees under bounded resources.''}
+    \item \textit{``We present a model-checking procedure and establish its complexity.''}
+    \item \textit{``Experiments show that the approach reduces attacker reachability under constrained defense budgets.''}
+\end{itemize}
+
+\subsection*{Example of a useful skeleton}
+
+Here is a simple form that often works well:
+
+\begin{quote}
+In such a domain, it remains difficult to address such a problem under such conditions. To overcome this limitation, we propose such a framework / such a model / such a method. Our approach relies on such a main idea. We then show such a property / such a result / such an improvement. These results suggest that our approach makes it possible to better handle such a type of scenario.
+\end{quote}
+
+Or in a more precise way:
+
+\begin{quote}
+Cybersecurity requires means to verify ...... (\textbf{Context}); in this context there is a lack of formalism to enable this (\textbf{Problem}); we propose CRF (Cybersecurity Risk Formalism), a novel formalism (\textbf{Contribution}) that, through a combination of ... and ..., makes it possible to define risk dynamically. (\textbf{Method}) We demonstrate its applicability and its ability to reason about a problem, in a more expressive way than previous formalisms TFN and BRN (\textbf{Result}) through its ability to add such a feature, which brings a new perspective on the way of approaching risk (\textbf{Scope})
+\end{quote}
+
+This is not a model to copy word for word, but a logical structure to keep in mind.
+
+\section{Introduction}
+
+The \textbf{introduction} often determines the perceived quality of the paper. A reviewer may accept making an effort for a difficult proof or for dense notation. They rarely make that effort if the introduction does not give them a clear reason to do so.
+
+A good introduction does not circle around the subject. It gets into it quickly. It starts by situating the field, but it must not get bogged down in generalities. The reader does not need half a page about the fact that cybersecurity is important, or that modern systems are complex. They already know that. What they want to understand is where your exact problem lies.
+
+Its main function is to answer the following questions:
+\begin{itemize}
+    \item In what context does the work take place?
+    \item What is the exact problem?
+    \item Why is this problem difficult or unresolved?
+    \item What is missing in the state of the art?
+    \item What is your contribution?
+    \item Why is this contribution relevant?
+\end{itemize}
+
+\subsection*{Recommended structure}
+
+A solid introduction can be thought of in six moves.
+
+\paragraph{1. Context.}
+The general domain is introduced. You should move quickly towards a relevant context, without writing a page of banalities. The context should prepare the problem, not delay it.
+
+\paragraph{2. Problem.}
+This is the most important step. Many papers speak well about a domain, but poorly about a problem. Saying ``we are interested in the security of embedded systems'' is not a problem. Saying ``existing approaches do not allow reasoning simultaneously about time, cost, and the defender's strategic choices'' is one.
+
+\paragraph{3. Challenge or Gap.}
+This is where the \textbf{gap} is built. You need to show what the existing literature already does, then explain honestly what it still does not allow. This gap may be theoretical, practical, algorithmic, experimental, or methodological.
+
+\paragraph{4. Main Idea.}
+The central idea of the paper is announced. The main contribution should not be kept for later. The reader should know fairly early what the paper brings.
+
+\paragraph{5. Contributions.}
+The contributions should be explicit, separated if needed, and formulated in a verifiable way. A good contribution can be pointed to in the rest of the paper. A bad contribution looks like a vague promise.
+
+\paragraph{6. Paper Organization.}
+The introduction often ends with a sentence or a short paragraph giving the structure of the paper. Section 2 .... Section 3 ...... etc...
+
+\subsection*{Related Work in the Introduction or Separate Section}
+
+\textbf{Related Work} can be handled in two ways:
+\begin{itemize}
+    \item either it is \textbf{integrated into the introduction}, if the comparison with existing work is short and directly related to the motivation;
+    \item or it is \textbf{separate}, if the field is rich and a more structured analysis is needed.
+\end{itemize}
+
+A practical rule:
+\begin{itemize}
+    \item if the paper is short, part of the state of the art is often integrated into the introduction;
+    \item if the paper is longer, theoretical, or highly comparative, a dedicated section is preferable.
+\end{itemize}
+
+\subsection*{Practical advice}
+
+For a short paper, for example 8 to 10 pages in double column format, an introduction rarely exceeds 1 to 1.5 pages. Below one page, it is often too dry. Beyond 1.5 pages, it risks losing momentum unless the paper is highly theoretical.
+
+\subsection*{Example of the difference between a bad and a good opening}
+
+Weak version:
+\begin{quote}
+Cybersecurity has become a major issue in recent years. Many systems are now connected. Several methods have been proposed in the literature.
+\end{quote}
+
+More useful version:
+\begin{quote}
+Connected embedded systems must be defended against progressive attacks while complying with strong constraints of time, resources, and safety. Yet, existing models rarely capture these three dimensions simultaneously. This limits their ability to reason about adaptive defense mechanisms in realistic scenarios.
+\end{quote}
+
+In the second case, the reader already understands the landscape, the difficulty, and the gap.
+
+\section{Background}
+
+The \textbf{background} section serves to establish the minimum building blocks required to understand the paper. It is not mandatory. In some fields it is common. In others it is absent, and the useful reminders are integrated directly into the technical sections. You should therefore first look at the practices of your community.
+
+When it exists, its role is simple: to give the reader what they need, and nothing more. This is often where authors lose space. They want to be pedagogical, but end up writing a mini-course. That is not the right place.
+
+A good rule is the following: every definition in the background must be reused later. If a concept is never used again in the contribution, it probably did not belong there.
+
+This section typically includes notation, modelling assumptions, non-trivial definitions, the formal framework, or certain technical concepts without which the rest would be opaque.
+
+For example, if your paper relies on a Markov chain, you can recall the definition in a compact way, then refer to a citation if needed:
+
+\paragraph{Example.}
+\begin{definition}[Markov Chain]
+A Markov Chain (MC) is a pair $\mathcal{H}=(Q,\mathbf{P})$ where $Q$ is a finite or countable set of states and $\mathbf{P}: Q \times Q \rightarrow [0,1]$ is a transition probability function such that for every state $q \in Q$, $\sum_{q' \in Q}\mathbf{P}(q,q')=1$.
+\end{definition}
+
+\subsection*{Writing advice}
+
+If you feel that your background is becoming too long, ask yourself this question: am I explaining what is necessary for the paper, or am I trying to show that I master the field? The two do not always coincide.
+
+Most often, it is better to organise the related work by families of approaches:
+\begin{itemize}
+    \item logical approaches;
+    \item probabilistic approaches;
+    \item attack-graph-based approaches;
+    \item simulation-oriented approaches;
+    \item application-oriented approaches;
+    \item approaches dedicated to a particular type of system.
+\end{itemize}
+
+Within each family, three things must be done: summarise the common idea, identify what it enables, then explain its limitation with respect to your objective.
+
+\subsection*{Example of bad related work}
+
+\begin{quote}
+A does X. B does Y. C does Z. D extends B. E studies another case.
+\end{quote}
+
+This is readable locally, but useless globally. You leave the paragraph without a clear idea.
+
+\subsection*{More useful example}
+
+\begin{quote}
+Existing approaches mainly fall into two families. The first models attack dependencies in a structural way, but gives little treatment to temporal dynamics. The second introduces time or probability, but without explicitly capturing the defender's strategic choices. Our work lies at the intersection of these two needs.
+\end{quote}
+
+Here, the reader immediately understands the map of the field.
+
+\subsection*{Cautious formulations}
+
+When making a claim about the state of the art, you need to remain cautious. You should neither caricature existing work nor claim to be the first at everything. Two common formulations are correct:
+\begin{itemize}
+    \item \textit{``to the best of our knowledge''}
+    \item \textit{``as far as we know''}
+\end{itemize}
+
+They should be used when justified, not as an automatic formula. They signal reasonable caution, not immunity from error.
+
+\section{Problem Statement and Research Question}
+
+Before unfolding the solution, it is often useful to clearly formulate the problem being addressed. This part can be integrated into the introduction or take a separate section.
+
+Its role is to lock the framework. At this stage, the reader should know what is given, what is being sought, under which assumptions, and with which constraints.
+
+A good formulation often looks like this:
+\begin{quote}
+Given a system modelled in such a way, subject to such constraints and such types of adversarial actions, we seek to verify / optimise / guarantee such a property.
+\end{quote}
+
+This sentence may seem simple. Yet it imposes useful discipline. It prevents drifting towards a vague objective.
+
+If your paper contains research questions, they should be few and well targeted. Two or three real questions are better than a list of artificially reformulated sub-objectives.
+
+\section{Core Sections: Model, Method, Theory, Algorithm, or System}
+
+The core of the paper is often found in Sections 3, 4, and 5. This is where you present your model, your main idea, your method, your theoretical results, your algorithm, or your system.
+
+The risk here is to mix everything together. A reader should be able to distinguish without effort:
+\begin{itemize}
+    \item what belongs to the model;
+    \item what constitutes the novelty;
+    \item what is proved;
+    \item what is implemented;
+    \item what is observed experimentally.
+\end{itemize}
+
+\subsection*{Model or Formalization}
+
+If you propose a model or a formalism, start by clearly defining the objects being manipulated. Avoid introducing too much notation at once. Notation is not problematic because it is mathematical. It becomes problematic when it appears before the reader knows what it is for.
+
+A good order is often:
+\begin{enumerate}[label=\arabic*.]
+    \item intuition of the model;
+    \item formal components;
+    \item semantics;
+    \item simple example.
+\end{enumerate}
+
+The example plays a central role. It is not there to look nice. It is there to anchor the definitions.
+
+\subsection*{Main Contribution}
+
+This is where you present what is truly new. It may be a logic, a semantics, a computation method, a translation to another model, an architecture, a strategy, or an analysis mechanism.
+
+The important point is the following: not only to describe, but also to justify the choices. If you introduce an operator, a variable, a constraint, or an assumption, explain why it is necessary.
+
+For example, instead of writing:
+\begin{quote}
+We then define a new global cost.
+\end{quote}
+
+it is better to write:
+\begin{quote}
+We then introduce a global cost in order to capture in a single quantity the combined effect of success time, engaged resources, and disturbances induced by the defense.
+\end{quote}
+
+In the second case, the reader understands the function of the definition.
+
+\subsection*{Theory or Guarantees}
+
+If your paper contains theorems, lemmas, propositions, or complexity results, you need to guide the reading. Many proofs are technically correct, but poorly introduced from a pedagogical point of view.
+
+A good habit is to present for each result:
+\begin{enumerate}[label=\arabic*.]
+    \item what the statement says;
+    \item why it is interesting;
+    \item under which assumptions it holds;
+    \item what it changes concretely.
+\end{enumerate}
+
+For example, before a correctness theorem, a simple sentence may be enough:
+\begin{quote}
+The following result establishes that the proposed procedure computes exactly the set of states satisfying the formula.
+\end{quote}
+
+Before a complexity result:
+\begin{quote}
+The following theorem specifies the cost of model checking in our framework and allows us to compare our approach with neighbouring logics.
+\end{quote}
+
+\paragraph{Important point.}
+Avoid formulations such as \textit{``obviously''}, \textit{``clearly''}, \textit{``it is easy to see''} when the point is not actually immediate. In a paper, this kind of wording may irritate a reviewer. If it takes two minutes of thought, it was not obvious. Moreover, everything you say must be provable, either by a proof if it is mathematics, or by a reference or a result. You are not better by magic; you need to say it and prove it. For example, such a reference says this and does that; based on all this, our framework solves a problem present in such references, as can be seen in Figure X, we can...
+
+\subsection*{Implementation or System Design}
+
+If the paper includes an implementation, clearly distinguish what belongs to:
+\begin{itemize}
+    \item the idea;
+    \item its software translation;
+    \item the experimental environment.
+\end{itemize}
+
+This matters, because a reader does not want to confuse a property of the model with a property of a particular implementation.
+
+\section{Evaluation, Results, Comparison, and Analysis}
+
+A contribution is only credible if it is evaluated against what it promises. This is a simple but fundamental rule.
+
+If you announce greater expressiveness, you need to show cases that previous approaches do not cover. If you announce better performance, you must measure the cost. If you announce greater precision, you must show what it rests on. If you announce a better controlled trade-off, you must analyse that trade-off.
+
+A good evaluation section does not merely display tables or figures. It explains:
+\begin{itemize}
+    \item why these case studies were chosen;
+    \item why these metrics are relevant;
+    \item why these baselines are the right ones;
+    \item what the results really mean.
+\end{itemize}
+
+\subsection*{Comparison}
+
+Comparing does not mean saying ``we are better'' or showing a huge table and saying we do better. A serious comparison specifies the framework. Sometimes two methods do not address exactly the same problem. In that case, you need to say so honestly. You need to explain:
+\begin{itemize}
+    \item why the chosen baselines are relevant;
+    \item according to which criteria the comparison is fair;
+    \item under which conditions the comparison is carried out;
+    \item whether some methods are not directly comparable.
+\end{itemize}
+
+For example:
+\begin{quote}
+The comparison with X is partial, because X does not take into account the temporal constraint considered here. We nevertheless retain this baseline in order to compare the probabilistic part common to both approaches.
+\end{quote}
+
+This sentence inspires more confidence than a forced comparison.
+
+\subsection*{Analysis}
+
+Analysis is the part most often underdeveloped. Many show results, but do not really interpret them.
+
+A useful analysis should answer questions such as:
+\begin{itemize}
+    \item Why does this method work better here?
+    \item Why does it fail or degrade elsewhere?
+    \item What is the impact of a parameter?
+    \item Which assumption seems most critical?
+    \item Which trade-offs appear?
+\end{itemize}
+
+\subsection*{Common mistake}
+
+Simply saying:
+\begin{quote}
+The results show that our method outperforms the others.
+\end{quote}
+is not enough.
+
+A more useful version would be:
+\begin{quote}
+The observed gain mainly comes from the explicit consideration of defensive transitions, which are absent from the baselines. In contrast, when the size of the model increases significantly, computational cost becomes dominant, which highlights a scalability limitation.
+\end{quote}
+
+Here, the result is interpreted, not merely announced.
+
+\section{Discussion}
+
+The \textbf{discussion} section serves to take a step back. It is very useful when your paper relies on strong assumptions, opens a new direction, or when the results have an interesting but limited scope.
+
+The discussion is not a repetition of the results. It is used to talk about what the results mean, what they do not cover, and what would still need to be done to go further.
+
+This is often where real scientific maturity is shown. Acknowledging a limitation does not necessarily weaken a paper. On the contrary, when it is done properly, it makes it more credible.
+
+Example:
+\begin{quote}
+Our model assumes here an attacker with perfect visibility over the logical state of the system, but not over internal dynamic parameters. This assumption is consistent with several scenarios studied in the literature, but it may be too strong or too weak depending on the considered level of compromise.
+\end{quote}
+
+This sentence shows that the author knows exactly where the boundary of the framework lies.
+
+\section{Conclusion and Future Work}
+
+The conclusion closes the paper. It should not simply repeat the abstract. It should leave the reader with a clear picture of the addressed problem, the main contribution, and what should be retained. It therefore recalls the essential points without repeating the introduction or abstract word for word.
+
+A good conclusion answers three questions soberly:
+\begin{itemize}
+    \item what problem was addressed;
+    \item what was contributed;
+    \item what the real scope of this contribution is.
+\end{itemize}
+
+The \textbf{Future Work} part must be realistic. It should not contain an artificial list of vague perspectives.
+
+Good perspectives:
+\begin{itemize}
+    \item natural extension of the model;
+    \item improvement of a restrictive assumption;
+    \item scalability;
+    \item consideration of a new type of data;
+    \item validation on more realistic cases;
+    \item theoretical generalisation;
+    \item better practical integration.
+\end{itemize}
+
+For example:
+\begin{quote}
+A natural extension of this work is to integrate partial observations of the defender, in order to reason about adaptive policies under incomplete information.
+\end{quote}
+
+Bad perspectives not to mention:
+\begin{itemize}
+    \item \textit{``In future work, we will improve the method.''}
+    \item \textit{``Many things remain to be done.''}
+    \item \textit{``This work can be extended in several directions.''}
+\end{itemize}
+
+\section{Practical Writing Advice}
+
+\subsection*{1. One section, one function}
+
+Each section must have a clear function. If one section does several things at once, it often becomes confusing.
+
+\subsection*{2. One paragraph, one idea}
+
+Each paragraph should carry one main idea. A paragraph is not an accumulation of sentences.
+
+\subsection*{3. Announce before details}
+
+Before a figure, a table, a definition, or a theorem, announce why this element appears at that point. A well-placed transition sentence greatly improves readability.
+
+\subsection*{4. Do not hide the contribution}
+
+Do not bury your novelty under too much context. The contribution must appear early and clearly. In plain terms, within the first five minutes of reading I should understand the context, the problem, and what you propose quickly enough to make me want to continue. If the reader has to wait until page 4 to see it, it is often too late.
+
+\subsection*{5. Be precise in your claims}
+
+Never claim more than what is shown. If you say that a method is better, specify on which axis. If you say that it is more general, explain in what sense. If you say that a result is significant, provide the basis that allows you to say so.
+
+\subsection*{7. Use figures and tables with purpose}
+
+A figure or a table must have an argumentative function. They should not be added just to fill space. Especially for papers with page constraints, a figure takes a lot of space, so include only one or two, but make them very explanatory.
+
+\subsection*{8. Maintain stable terminology}
+
+The same concept should keep the same name throughout the paper. Changing vocabulary without a technical reason creates confusion. The same applies to notation or variables: if you use a certain letter for a certain object, do not change it.
+
+\subsection*{Words and expressions to avoid in English}
+
+The mistakes below often appear in rejected papers, poorly revised papers, or simply less credible ones.
+The problem is not only stylistic. These expressions are often vague, too strong,
+imprecise, or unsupported. In a paper, it is better to prefer formulations that describe
+exactly what is shown, measured, proved, or assumed.
+
+\begin{itemize}
+
+    \item \textit{``very important''} \\
+    Too vague. It does not say \emph{why} it is important. \\
+    Instead: \textit{``relevant because ...''}, \textit{``important for ...''}, \textit{``critical in scenarios where ...''}
+
+    \item \textit{``novel''} or \textit{``novel and efficient''} without proof \\
+    \textit{Novel} is often perceived as a self-evaluation. \textit{Efficient} means nothing without a cost, a bound, or a measure. \\
+    Instead: \textit{``we introduce ...''}, \textit{``we propose ...''}, \textit{``runs in polynomial time''}, \textit{``reduces runtime by X\%''}
+
+    \item \textit{``state-of-the-art''} without a reference or a precise axis \\
+    A promotional expression if it is not defined. You need to say according to which criterion the comparison is made. \\
+    Instead: \textit{``outperforms recent baselines on ...''}, \textit{``matches the best reported results on ...''}, \textit{``compares favorably with ...''}
+
+    \item \textit{``revolutionary''}, \textit{``game-changing''}, \textit{``groundbreaking''} \\
+    Too marketing-oriented. Rarely acceptable in a scientific paper. \\
+    Instead: \textit{``extends ...''}, \textit{``improves ...''}, \textit{``enables ...''}, \textit{``provides a new way to ...''}
+
+    \item \textit{``perfect''}, \textit{``optimal''} without a formal framework \\
+    \textit{Perfect} is almost always false. \textit{Optimal} requires an objective function and a proof or a clear reference. \\
+    Instead: \textit{``accurate within ...''}, \textit{``minimizes ... under ...''}, \textit{``near-optimal under ...''}
+
+    \item \textit{``obviously''}, \textit{``clearly''}, \textit{``of course''} \\
+    A bad rhetorical signal. If it is really clear, the sentence or the proof should show it without insisting. \\
+    Instead: remove the word, or write \textit{``from Definition 2, it follows that ...''}, \textit{``by construction ...''}, \textit{``as shown in Figure 3 ...''}
+
+    \item \textit{``it is easy to see that ...''} \\
+    Often irritating to the reader if the step is not immediate. \\
+    Instead: \textit{``the key observation is that ...''}, \textit{``the result follows from ...''}, \textit{``we now show that ...''}
+
+    \item \textit{``somehow''}, \textit{``more or less''}, \textit{``kind of''} \\
+    Indicates imprecision or poorly controlled hesitation. \\
+    Instead: \textit{``approximately''}, \textit{``within ...''}, \textit{``partially''}, \textit{``under the assumption that ...''}
+
+    \item \textit{``a lot of''}, \textit{``many''}, \textit{``several''} when a quantity can be given \\
+    Too vague if a measure, an order of magnitude, or a bound is available. \\
+    Instead: \textit{``X datasets''}, \textit{``in most cases''}, \textit{``in 17 out of 20 runs''}, \textit{``for a large subset of ...''}
+
+    \item \textit{``proved''} for an experimental result \\
+    \textit{Prove} is reserved for mathematical or logical results. An experiment supports, suggests, shows, or indicates. \\
+    Instead: \textit{``the experiments show that ...''}, \textit{``the results indicate that ...''}, \textit{``the data support ...''}
+
+    \item \textit{``robust''} without specifying to what \\
+    A system is not robust in the absolute sense. It is robust against a type of variation, noise, attack, or change of assumption. \\
+    Instead: \textit{``remains effective under ...''}, \textit{``is insensitive to ...''}, \textit{``degrades gracefully when ...''}
+
+    \item \textit{``significant''} without a defined statistical or analytical meaning \\
+    A dangerous word. It can mean important, notable, or statistically significant. You need to choose. \\
+    Instead: \textit{``statistically significant ($p<0.05$)''}, \textit{``substantial''}, \textit{``noticeable''}, \textit{``non-negligible''}
+
+    \item \textit{``substantial improvement''}, \textit{``considerable gain''} without a number \\
+    These adjectives must be supported by a value, a bound, or a clear comparison. \\
+    Instead: \textit{``improves accuracy by 6.4 points''}, \textit{``reduces cost by 23\%''}
+
+    \item \textit{``works well''}, \textit{``performs well''} \\
+    It does not say according to which metric or compared to what. \\
+    Instead: \textit{``achieves an F1-score of ...''}, \textit{``reduces false positives compared with ...''}, \textit{``satisfies the specification on ...''}
+
+    \item \textit{``better''}, \textit{``stronger''}, \textit{``more expressive''} without a comparison point \\
+    A comparative requires an explicit reference point. \\
+    Instead: \textit{``more expressive than CTL with respect to ...''}, \textit{``stronger than the baseline under ...''}
+
+    \item \textit{``all''}, \textit{``every''}, \textit{``always''}, \textit{``never''} without strict justification \\
+    Universal quantifiers are risky. They make a sentence false as soon as there is one counter-example. \\
+    Instead: \textit{``in all evaluated cases''}, \textit{``for every state in $Q$''}, \textit{``under Assumptions 1--3''}, \textit{``in the considered setting''}
+
+    \item \textit{``the literature shows that ...''} without a targeted citation \\
+    Too broad and not very verifiable. \\
+    Instead: \textit{``recent work on ... shows that ...''}, \textit{``prior studies \cite{...,...} report ...''}
+
+    \item \textit{``we believe''}, \textit{``we think''}, \textit{``we feel''} \\
+    In a paper, the argument must rely on a proof, a reference, a definition, or a result. \\
+    Instead: \textit{``we hypothesize that ...''}, \textit{``we conjecture that ...''}, \textit{``these results suggest that ...''}
+
+    \item \textit{``interesting''} \\
+    An empty word if you do not say what makes the point interesting. \\
+    Instead: \textit{``non-trivial''}, \textit{``unexpected''}, \textit{``useful because ...''}, \textit{``relevant for ...''}
+
+    \item \textit{``quite''}, \textit{``rather''}, \textit{``fairly''} \\
+    Vague hedges. They add no measurable information. \\
+    Instead: remove them, or replace them with a measure, a threshold, or a precise qualification.
+
+    \item \textit{``in order to''} when \textit{``to''} is enough \\
+    A longer phrasing with no gain in meaning. \\
+    Instead: \textit{``to evaluate ...''}, \textit{``to compute ...''}
+
+    \item \textit{``due to the fact that''} \\
+    A heavy formulation. \\
+    Instead: \textit{``because''}, \textit{``since''}
+
+    \item \textit{``it was found that''} \\
+    An impersonal phrasing that is often unnecessarily heavy. \\
+    Instead: \textit{``we found that ...''}, \textit{``the analysis shows that ...''}
+
+    \item \textit{``gives insight into''} without concrete content \\
+    Often too abstract if you do not specify what insight it gives. \\
+    Instead: \textit{``reveals the impact of ...''}, \textit{``identifies the role of ...''}, \textit{``shows how ... affects ...''}
+
+    \item \textit{``handles real-world scenarios''} without a description of the scenarios \\
+    A common but hollow formulation if the studied cases are not described. \\
+    Instead: \textit{``evaluated on automotive network topologies derived from ...''}, \textit{``tested on scenarios including ...''}
+
+    \item \textit{``to the best of our knowledge''} used everywhere \\
+    An acceptable formulation, but only for a cautious bibliographic claim. It must not replace real related work. \\
+    Instead: \textit{``to the best of our knowledge, no prior work combines ...''} only if the sentence is targeted and defensible.
+
+\end{itemize}
+
+\subsection*{Preferred Style}
+
+As a general rule, prefer concrete and verifiable verbs:
+\begin{itemize}
+    \item \textit{``define''}
+    \item \textit{``formalize''}
+    \item \textit{``model''}
+    \item \textit{``prove''} (only for a formal result)
+    \item \textit{``show''}
+    \item \textit{``demonstrate''}
+    \item \textit{``indicate''}
+    \item \textit{``suggest''}
+    \item \textit{``measure''}
+    \item \textit{``compare''}
+    \item \textit{``quantify''}
+    \item \textit{``bound''}
+    \item \textit{``capture''}
+    \item \textit{``support''}
+    \item \textit{``enable''}
+\end{itemize}
+
+\section{AI in the Service of Writing?}
+
+AI can help with word choice, grammar, shortening, and local rewrites. It can save time. It can also harm a paper if it is used without control.
+
+The main problem is not that AI writes badly. The main problem is that it often writes in a \emph{smooth} way while hiding weak content. The text looks polished, but the reasoning may be vague, repetitive, or excessive.
+
+In practice, AI-assisted writing becomes visible through repeated signals.
+
+\subsection*{1. Over-smoothed prose}
+
+AI often produces text that is too uniform. The paragraphs have the same rhythm.
+The transitions seem polished, but they add little. The text becomes easy to read at the sentence level and weak at the argument level.
+
+Typical signs are:
+\begin{itemize}
+    \item repeated transition phrases;
+    \item repeated sentence patterns;
+    \item a balanced but empty paragraph structure;
+    \item apparently cautious claims that say little.
+\end{itemize}
+
+For example, AI often turns a direct sentence into a padded one.
+
+Weak:
+\begin{quote}
+It is worth noting that this result is interesting because it provides useful insight into the system.
+\end{quote}
+
+Better:
+\begin{quote}
+This result shows how defense timing changes attack success.
+\end{quote}
+
+\subsection*{2. Filler phrases}
+
+AI often adds phrases that take space without adding information.
+These phrases make the text longer and more artificial.
+
+Common examples:
+\begin{itemize}
+    \item \textit{``It is worth noting that ...''}
+    \item \textit{``It is important to note that ...''}
+    \item \textit{``One can observe that ...''}
+    \item \textit{``Overall, this highlights the fact that ...''}
+    \item \textit{``From this perspective, ...''}
+    \item \textit{``In today's rapidly evolving landscape, ...''}
+\end{itemize}
+
+These phrases should generally be deleted, not rewritten.
+
+Weak:
+\begin{quote}
+It is important to note that our model is useful in the context of dynamic defense.
+\end{quote}
+
+Better:
+\begin{quote}
+Our model captures dynamic defense decisions.
+\end{quote}
+
+\subsection*{3. Overused words}
+
+AI tends to overuse certain words because they sound academic.
+A single word proves nothing. The problem comes from repetition.
+
+Common examples:
+\begin{itemize}
+    \item \textit{``delve''}
+    \item \textit{``underscore''}
+    \item \textit{``notably''}
+    \item \textit{``particularly''}
+    \item \textit{``comprehensive''}
+    \item \textit{``crucial''}
+    \item \textit{``enhancing''}
+    \item \textit{``intricate''}
+    \item \textit{``meticulous''}
+    \item \textit{``boast''}
+\end{itemize}
+
+The problem is not the word itself. The problem is a text that relies on this type of vocabulary every few lines.
+
+A simple rule helps: if a word sounds academic but adds no precision, replace it with a clearer word or remove it.
+
+\subsection*{4. Strong claims with weak support}
+
+AI often produces confident sentences even when the evidence is missing.
+This is dangerous in scientific writing.
+
+Common weak patterns:
+\begin{itemize}
+    \item \textit{``Our novel and efficient method significantly improves robustness.''}
+    \item \textit{``This clearly proves that the approach is better.''}
+    \item \textit{``The framework provides a powerful and comprehensive solution.''}
+\end{itemize}
+
+These sentences sound scientific, but they are weak. They contain claims without a metric, without a baseline, or without a defined notion.
+
+Better:
+\begin{quote}
+We propose a new procedure. On the evaluated benchmarks, it reduces runtime by 18\% compared with the baseline and remains effective under bounded observation noise.
+\end{quote}
+
+\subsection*{5. Generic examples}
+
+AI often gives technically acceptable but overly generic examples. They do not help the reader understand the real contribution.
+
+Weak:
+\begin{quote}
+For example, this method can be useful in many real-world applications.
+\end{quote}
+
+Better:
+\begin{quote}
+For example, in an in-vehicle network, the method can compare two defense schedules under bounded attacker progress.
+\end{quote}
+
+A good example should make the paper more concrete. It should not merely confirm that the topic is broad.
+
+\subsection*{6. Repeated structure}
+
+AI often writes paragraphs with the same internal shape:
+context sentence, broad claim, soft transition, general conclusion.
+One paragraph may be acceptable. Five in a row make the text artificial.
+
+A paper should not sound mechanically regular. The structure should follow the reasoning, not a template.
+
+\subsection*{7. Weak handling of references}
+
+AI is particularly risky with references.
+It can:
+\begin{itemize}
+    \item invent papers;
+    \item merge details from different papers;
+    \item produce wrong authors, titles, years, or publication venues;
+    \item cite a real paper for the wrong claim.
+\end{itemize}
+
+This is one of the easiest ways to damage the credibility of a manuscript.
+
+A simple rule is mandatory:
+never trust an AI-generated reference until you have checked the actual source.
+
+\subsection*{8. Loss of the author's voice}
+
+When AI rewrites too much, the paper loses its own voice.
+The terminology becomes flatter.
+The tone becomes uniform.
+The text stops sounding like a researcher defending a precise argument and starts sounding like a generic summary.
+
+This is often visible when:
+\begin{itemize}
+    \item all sections use the same tone;
+    \item all transitions seem interchangeable;
+    \item the text becomes correct but generic;
+    \item technical distinctions become weaker after rewriting.
+\end{itemize}
+
+\subsection*{Practical rule}
+
+Use AI locally, not globally.
+
+Good use:
+\begin{itemize}
+    \item shorten a paragraph;
+    \item remove repetition;
+    \item improve grammar;
+    \item rewrite an unclear sentence;
+    \item propose alternatives for a weak title or caption.
+\end{itemize}
+
+Bad use:
+\begin{itemize}
+    \item generate a whole section and keep it almost unchanged;
+    \item ask for references and copy them directly;
+    \item let AI rewrite technical definitions or proof ideas without checking every word;
+    \item use AI-generated text when you cannot yourself defend each sentence.
+\end{itemize}
+
+\subsection*{Editing test}
+
+After any AI-assisted rewrite, ask yourself five simple questions:
+\begin{itemize}
+    \item Does this sentence add precise information?
+    \item Can I defend every claim it contains?
+    \item Is the formulation shorter and clearer, or only more fluent?
+    \item Does this still sound like my paper?
+    \item Would I myself write this sentence if I had to explain it orally?
+\end{itemize}
+
+If the answer is no, rewrite the sentence by hand.
+
+\end{document}
