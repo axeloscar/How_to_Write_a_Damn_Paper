@@ -1,4 +1,4 @@
-# 🧠 PhD Survival Guide to Writing a Relevant Paper Without Annoying Your Reviewer
+# 🧠 PhD Survival Guide to Writing a Relevant Scientific Paper Without Annoying Your Reviewer
 
 This repository contains a practical and evolving guide on how to write a scientific paper in a clear, structured, and credible way, who aims to support scientific writing by tries to explain:
 
