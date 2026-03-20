@@ -1,15 +1,31 @@
 # PhD Survival Guide to Writing a Relevant Paper Without Annoying Your Reviewer
 
-This repository contains a LaTeX guide on how to write a clear, structured, and credible scientific paper.
+This repository contains a practical and evolving guide on how to write a scientific paper in a clear, structured, and credible way.
 
-There exist two language version off this guide, the english version:
+The goal is not to provide a rigid template. It is meant to offer a general starting point that anyone can read, use, adapt, correct, and improve according to their own field, level, and writing habits.
 
-Source LaTeX: [English Version](./latex_guide_english.tex)
+In short, this repository aims to support writting by explain:
+- how a paper is structured,
+- what each section is supposed to do,
+- which common mistakes weaken a manuscript,
+- how to write more clearly and more honestly,
+- and how to avoid vague, inflated, or AI-smoothed scientific writing.
 
-Compiled PDF: [English PDF Guide](./How_to_Write_a_Damm_Paper.pdf)
+## Available versions
 
-French version:
+There are currently two language versions of the guide.
 
-Source LaTeX: [French Version](./latex_guide_french.tex)
+### English version
+- Source LaTeX: [English Version](./latex_guide_english.tex)
 
-Compiled PDF: [French PDF Guide](./Comment_Ecrire_un_Papier.pdf)
+### French version
+- Source LaTeX: [French Version](./latex_guide_french.tex)
+
+## Contributing
+
+This guide is meant to improve over time.  
+You are welcome to adapt it for your own use, fix mistakes, clarify sections, extend parts that are too general, or propose improvements that make it more useful for other researchers.
+
+The goal is not to freeze a final version, but to keep building the most useful version possible.
+
+All commits, will take approximately one week to be approuve.
