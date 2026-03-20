@@ -2,7 +2,14 @@
 
 This repository contains a LaTeX guide on how to write a clear, structured, and credible scientific paper.
 
-Source LaTeX: [`guide.tex`](./guide.tex)
+There exist two language version off this guide, the english version:
 
-Compiled PDF: [`guide.pdf`](./guide.pdf)
+Source LaTeX: [English Version](./guide_english.tex)
 
+Compiled PDF: [English PDF GUIDE`](./guide_english.pdf)
+
+French version:
+
+Source LaTeX: [French Version](./guide_french.tex)
+
+Compiled PDF: [French PDF GUIDE`](./guide_french.pdf)
