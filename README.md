@@ -18,7 +18,7 @@ There are currently two language versions of the guide, you just have to use a l
 - English Source LaTeX: [English Version](./latex_guide_english.tex)
 - French Source LaTeX: [French Version](./latex_guide_french.tex)
 
-- Compiled PDF: [English PDF Guide](./How_to_Write_a_Damn_Paper.pdf)
+- Compiled PDF: [English PDF Guide - How_to_Write_a_Damn_Paper](https://github.com/axeloscar/How-to-Write-a-Damm-Paper/releases/download/Guide/How_to_Write_a_Damn_Paper.pdf)
 
 ## Contributing
 
