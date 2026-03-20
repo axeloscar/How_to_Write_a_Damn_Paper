@@ -13,13 +13,12 @@ In short, this repository aims to support writting by explain:
 
 ## Available versions
 
-There are currently two language versions of the guide.
+There are currently two language versions of the guide, you just have to use a latex compilator, or read the PDF version directly.
 
-### English version
-- Source LaTeX: [English Version](./latex_guide_english.tex)
+- English Source LaTeX: [English Version](./latex_guide_english.tex)
+- French Source LaTeX: [French Version](./latex_guide_french.tex)
 
-### French version
-- Source LaTeX: [French Version](./latex_guide_french.tex)
+- Compiled PDF: [English PDF Guide](./How_to_Write_a_Damn_Paper.pdf)
 
 ## Contributing
 
