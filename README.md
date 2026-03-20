@@ -1,6 +1,6 @@
 # 🧠 PhD Survival Guide to Writing a Relevant Scientific Paper Without Annoying Your Reviewer
 
-This repository contains a practical and evolving guide on how to write a scientific paper in a clear, structured, and credible way, who aims to support scientific writing by tries to explain:
+This repository contains a practical and evolving guide on how to write a scientific paper in a clear, structured, and credible way, by tries to explain:
 
 - how a paper is structured;
 - what each section is supposed to do;
