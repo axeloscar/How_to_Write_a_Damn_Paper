@@ -1,0 +1,865 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+\title{Guide de survie du doctorant pour rédiger un article pertinents sans agacer votre évaluateur}
+\author{Axel A. Oscar}
+\date{}
+
+
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Ce guide a pour objectif d'aider possiblement à rédiger un papier scientifique de manière claire, structurée et crédible. Plutôt que de proposer un modèle rigide, il explique la fonction de chaque partie d'un papier et la logique qui les relie, depuis l'abstract et l'introduction jusqu'à la discussion et la conclusion. Il met également en évidence plusieurs faiblesses fréquentes, comme une motivation trop vague, des contributions mal définies, une comparaison insuffisante avec les travaux existants, des affirmations exagérées, ou une écriture imprécise. Une dernière partie s'intéresse au style rédactionnel, aux erreurs fréquentes en anglais, ainsi qu'aux effets visibles d'un usage excessif de l'IA dans l'écriture scientifique. L'objectif est simple : aider le lecteur à comprendre le problème, la contribution, les éléments de preuve et les limites, sans complexité inutile.
+\end{abstract}
+
+\tableofcontents
+
+
+\section{Purpose}
+
+
+Petit guide avec quelque conseil sur comment ecrire un papier if this is your first time anf you completely lost, ce n'est une recette magique, mais plutot une maniere de comprendre les attednue est de commencer de la facon la plus optimal et de permmetre a tes reviews et lecteur de comprendre ton raisonnement sans se perdre ou te sanctionner juste a cause de petit erreur. Ce guide bien que basique a volonter a etre completer au fil du temps par les annotation de la communanuter pour creer finalement un guide complet est coherent tout en restant le plus generaliste au vue des attendue de chacun.
+
+
+Un bon article n'est pas une suite de sections posées les unes après les autres. C'est une démonstration progressive. Chaque partie prépare la suivante. Chaque paragraphe doit aider le lecteur à répondre à une question précise. Si une section existe seulement parce que ``dans les papiers on met souvent ça'', alors il y a déjà un problème. 
+
+Quand tu écris, pense toujours au lecteur. Pas au lecteur idéal qui connaît déjà ton sujet par cœur, mais à un lecteur lambda qui sans connaître ton travail ou ton domaine, doit pouvoir comprendre sans effort inutile :
+
+\begin{enumerate}[label=\arabic*.]
+    \item quel est le problème traité ;
+    \item pourquoi ce problème est important ;
+    \item ce qui manque dans l'existant ;
+    \item ce que l'article apporte exactement ;
+    \item comment cette contribution a été conçue ;
+    \item comment elle a été évaluée ;
+    \item ce que l'on peut conclure honnêtement.
+\end{enumerate}
+
+En pratique, presque tous les bons papiers suivent une chaîne logique proche de celle-ci :
+\[
+\text{Context} \rightarrow \text{Problem} \rightarrow \text{Gap} \rightarrow \text{Contribution} \rightarrow \text{Evidence} \rightarrow \text{Limits} \rightarrow \text{Conclusion}
+\]
+
+Si cette chaîne est claire, le papier tient debout. Si elle est floue, même une bonne idée peut paraître faible.
+
+
+
+\section{Abstract}
+
+
+L'\textbf{abstract} est le résumé le plus dense de l'article. C'est souvent la seule partie lue avant une décision rapide : continuer la lecture, citer le papier, ou l'écarter. Il faut donc le traiter comme un texte stratégique, pas comme un simple résumé administratif.
+
+Un bon abstract répond vite aux questions suivantes : de quoi parle le papier, quel est le problème précis, qu'est-ce que tu apportes, comment tu le fais, et qu'est-ce qui est montré au final. Il ne doit pas faire rêver. Il doit informer.
+
+
+Un abstract efficace suit en général une structure implicite en cinq blocs :
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Contexte :} quel domaine et quel besoin général ;
+    \item \textbf{Problème :} quelle difficulté précise ;
+    \item \textbf{Approche :} quelle solution ou quel cadre proposé ;
+    \item \textbf{Résultats :} qu'est-ce qui a été montré ;
+    \item \textbf{Portée :} pourquoi cela compte.
+\end{enumerate}
+
+En général, sa structure implicite tient en cinq éléments :
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Contexte :} quel domaine et quel besoin général ;
+    \item \textbf{Problème :} quelle difficulté précise ;
+    \item \textbf{Approche :} quelle solution ou quel cadre proposé ;
+    \item \textbf{Résultats :} qu'est-ce qui a été montré ;
+    \item \textbf{Portée :} pourquoi cela compte.
+\end{enumerate}
+Selon les venues, la taille demandée varie. Dans beaucoup de conférences et journaux, on tourne autour de 150 à 250 mots. Il faut toujours vérifier les consignes exactes de soumission.
+
+\subsection*{Ce qu'il faut mettre}
+
+Le point important est le suivant : un abstract ne doit pas être vague. Si tu proposes une logique, un algorithme, un modèle, une architecture, un protocole, un cadre de preuve, un outil ou une méthode d'évaluation, il faut le nommer clairement. Si tu annonces des garanties formelles, une analyse de complexité, un gain mesuré, une amélioration d'expressivité ou une validation expérimentale, cela doit apparaître aussi.
+
+\subsection*{Ce qu'il faut éviter}
+
+Une erreur fréquente consiste à écrire un abstract qui reste au niveau des intentions :
+\begin{quote}
+\textit{``In this paper, we discuss an important problem in cybersecurity and present an interesting solution.''}
+\end{quote}
+Cette phrase ne dit presque rien. Le lecteur ne sait ni ce qui est proposé, ni ce qui a été démontré.
+
+Une formulation plus utile serait :
+\begin{quote}
+\textit{``We propose a timed probabilistic formalism for reasoning about adaptive cyber defense under bounded resources. We define its semantics, present a model-checking procedure, and evaluate it on representative attack scenarios. The results show that the formalism captures trade-offs that are not expressible in previous approaches.''}
+\end{quote}
+
+Il faut doncéviter :
+\begin{itemize}
+    \item les phrases trop générales ;
+    \item les affirmations sans contenu technique ;
+    \item les promesses vagues ;
+    \item les détails secondaires ;
+    \item les citations ;
+    \item les notations lourdes ;
+    \item les acronymes non nécessaires.
+\end{itemize}
+Par exemple ne pas perdre des mot a expliquer un acronyme ou alors a faire un etat de l'art.....
+
+\subsection*{Exemples de formulations faibles en anglais}
+
+À éviter :
+\begin{itemize}
+    \item \textit{``In this paper, we discuss some interesting ideas.''}
+    \item \textit{``Several results are presented.''}
+    \item \textit{``The proposed method performs well.''}
+    \item \textit{``This topic is very important nowadays.''}
+\end{itemize}
+
+À préférer :
+\begin{itemize}
+    \item \textit{``We propose a timed probabilistic logic for reasoning about defense guarantees under bounded resources.''}
+    \item \textit{``We present a model-checking procedure and establish its complexity.''}
+    \item \textit{``Experiments show that the approach reduces attacker reachability under constrained defense budgets.''}
+\end{itemize}
+
+
+
+\subsection*{Exemple de squelette utile}
+
+Voici une forme simple qui fonctionne souvent bien :
+
+\begin{quote}
+Dans tel domaine, il reste difficile de traiter tel problème dans telles conditions. Pour répondre à cette limite, nous proposons tel cadre / tel modèle / telle méthode. Notre approche repose sur telle idée principale. Nous montrons ensuite telle propriété / tel résultat / telle amélioration. Ces résultats suggèrent que notre approche permet de mieux traiter tel type de scénario.
+\end{quote}
+
+Ou de facon plus precise 
+
+\begin{quote}
+La cybersecuriter necessitent des moyens de verifier ...... (\textbf{Context}), dans ce context il y a un manque de formalisme pour permettre cele (\textbf{Probleme}), nous proposon CRF (Cybersecurity risk formalism) un novel formalisme (\textbf{contibution}) qui par une fusion de la partie ... et ... permet de definir le risque de facon dynamique. (\textbf{methode}) Nous demontront son applicabiliter et sa capaciter a raisonner sur un probleme, de facon plus expressive que les precedant formalisme TFN et BRN (\textbf{resultat}) par sa capasiter a ajouter telle truc ce qui aporte une nouvelle vision dans la facon d aprehender le risque (\textbf{porter})
+\end{quote}
+
+
+Ce n'est pas un modèle à copier mot pour mot, mais une structure logique à garder en tête.
+
+
+
+\section{Introduction}
+
+L'\textbf{introduction} décide souvent de la qualité perçue du papier. Un reviewer peut accepter de faire un effort sur une preuve difficile ou sur une notation dense. Il fait rarement cet effort si l'introduction ne lui donne pas une raison claire de le faire.
+
+Une bonne introduction ne tourne pas autour du sujet. Elle entre dedans rapidement. Elle commence par situer le domaine, mais elle ne doit pas s'enliser dans des généralités. Le lecteur n'a pas besoin d'une demi-page sur le fait que la cybersécurité est importante, ou que les systèmes modernes sont complexes. Il le sait déjà. Ce qu'il veut comprendre, c'est où se situe ton problème exact.
+
+Sa fonction principale est de répondre aux questions suivantes :
+\begin{itemize}
+    \item Dans quel contexte le travail s'inscrit-il ?
+    \item Quel est le problème exact ?
+    \item Pourquoi ce problème est-il difficile ou non résolu ?
+    \item Qu'est-ce qui manque dans l'état de l'art ?
+    \item Quelle est ta contribution ?
+    \item Pourquoi cette contribution est-elle pertinente ?
+\end{itemize}
+
+\subsection*{Structure conseillée}
+
+Une introduction solide peut être pensée en six mouvements.
+
+\paragraph{1. Context.}
+On introduit le domaine général. Il faut aller rapidement vers un contexte pertinent, sans écrire une page de banalités. Le contexte doit préparer le problème, pas le retarder.
+
+\paragraph{2. Problem.}
+C'est l'étape la plus importante. Beaucoup de papiers parlent bien d'un domaine, mais mal d'un problème. Dire ``nous nous intéressons à la sécurité des systèmes embarqués'' n'est pas un problème. Dire ``les approches existantes ne permettent pas de raisonner à la fois sur le temps, le coût et les choix stratégiques du défenseur'' en est un.
+
+
+\paragraph{3. Challenge or Gap.}
+C'est ici que se construit le \textbf{gap}. Il faut montrer ce que l'existant fait déjà, puis expliquer honnêtement ce qu'il ne permet pas encore. Ce manque peut être théorique, pratique, algorithmique, expérimental ou méthodologique.
+
+\paragraph{4. Main Idea.}
+On annonce l'idée centrale du papier. Il ne faut pas garder la contribution principale pour plus tard. On doit savoir assez tôt ce que l'article apporte.
+
+\paragraph{5. Contributions.}
+Les contributions doivent être explicites, séparées si besoin, et formulées de manière vérifiable. Une bonne contribution peut être pointée dans le reste du papier. Une mauvaise contribution ressemble à une promesse floue.
+
+\paragraph{6. Paper Organization.}
+On termine souvent par une phrase ou un petit paragraphe donnant le plan de l'article. Section 2 ....Section  3...... etc...
+
+\subsection*{Related Work in the Introduction or Separate Section}
+
+La \textbf{Related Work} peut être traitée de deux façons :
+\begin{itemize}
+    \item soit elle est \textbf{intégrée dans l'introduction}, si la comparaison avec l'existant est courte et directement liée à la motivation ;
+    \item soit elle est \textbf{séparée}, si le champ est riche et qu'une analyse plus structurée est nécessaire.
+\end{itemize}
+
+Règle pratique :
+\begin{itemize}
+    \item si le papier est court, on intègre souvent une partie de l'état de l'art dans l'introduction ;
+    \item si le papier est plus long, théorique, ou très comparatif, une section dédiée est préférable.
+\end{itemize}
+
+\subsection*{Conseil pratique}
+
+Pour un papier court, par exemple 8 à 10 pages en double colonne, une introduction dépasse rarement 1 à 1.5 page. En dessous d'une page, elle est souvent trop sèche. Au-delà de 1.5 page, elle risque de perdre en tension sauf si le papier est très théorique.
+
+
+\subsection*{Exemple de différence entre une mauvaise et une bonne entrée}
+
+Version faible :
+\begin{quote}
+La cybersécurité est devenue un enjeu majeur ces dernières années. De nombreux systèmes sont aujourd'hui connectés. Plusieurs méthodes ont été proposées dans la littérature.
+\end{quote}
+
+Version plus utile :
+\begin{quote}
+Les systèmes embarqués connectés doivent être défendus contre des attaques progressives, tout en respectant des contraintes fortes de temps, de ressources et de sûreté. Or, les modèles existants capturent rarement simultanément ces trois dimensions. Cela limite leur capacité à raisonner sur des mécanismes de défense adaptatifs dans des scénarios réalistes.
+\end{quote}
+
+Dans le second cas, le lecteur comprend déjà le terrain, la difficulté et le manque.
+
+
+\section{Background}
+
+La section \textbf{background} sert à poser les briques minimales nécessaires à la compréhension du papier. Elle n'est pas obligatoire. Dans certains domaines, elle est fréquente. Dans d'autres, elle est absente, et les rappels utiles sont intégrés directement dans les sections techniques. Il faut donc d'abord regarder les usages de ta communauté.
+
+Quand elle existe, son rôle est simple : donner au lecteur ce dont il a besoin, et rien de plus. C'est souvent ici que les auteurs perdent de la place. Ils veulent être pédagogiques, mais finissent par écrire un mini-cours. Ce n'est pas le bon endroit.
+
+Une bonne règle est la suivante : chaque définition du background doit être réutilisée ensuite. Si un concept n'est jamais repris dans la contribution, il n'avait probablement pas sa place ici.
+
+On y met typiquement les notations, les hypothèses de modélisation, les définitions non triviales, le cadre formel, ou certains concepts techniques sans lesquels la suite serait opaque.
+
+Par exemple, si ton papier repose sur une chaîne de Markov, tu peux rappeler la définition de manière compacte, puis renvoyer à une référence si besoin :
+
+\paragraph{Exemple.}
+\begin{definition}[Markov Chain]
+A Markov Chain (MC) is a pair $\mathcal{H}=(Q,\mathbf{P})$ where $Q$ is a finite or countable set of states and $\mathbf{P}: Q \times Q \rightarrow [0,1]$ is a transition probability function such that for every state $q \in Q$, $\sum_{q' \in Q}\mathbf{P}(q,q')=1$.
+\end{definition}
+
+\subsection*{Conseil de rédaction}
+
+Si tu sens que ton background devient long, pose-toi cette question : est-ce que j'explique ce qui est nécessaire au papier, ou est-ce que j'essaie de montrer que je maîtrise le domaine ? Les deux ne coïncident pas toujours.
+
+Le plus souvent, il vaut mieux organiser la related work par familles d'approches :
+\begin{itemize}
+    \item approches logiques ;
+    \item approches probabilistes ;
+    \item approches fondées sur des graphes d'attaque ;
+    \item approches orientées simulation ;
+    \item approches applicatives ;
+    \item approches dédiées à un type particulier de système.
+\end{itemize}
+
+Dans chaque famille, il faut faire trois choses : résumer l'idée commune, identifier ce qu'elle permet, puis expliquer sa limite par rapport à ton objectif.
+
+\subsection*{Exemple de mauvaise related work}
+
+\begin{quote}
+A does X. B does Y. C does Z. D extends B. E studies another case.
+\end{quote}
+
+C'est lisible localement, mais inutile globalement. On sort du paragraphe sans idée claire.
+
+\subsection*{Exemple plus utile}
+
+\begin{quote}
+Les approches existantes se divisent principalement en deux familles. Les premières modélisent les dépendances d'attaque de manière structurelle, mais traitent peu la dynamique temporelle. Les secondes introduisent du temps ou de la probabilité, mais sans capturer explicitement les choix stratégiques du défenseur. Notre travail se situe à l'intersection de ces deux besoins.
+\end{quote}
+
+Ici, le lecteur comprend immédiatement la carte du terrain.
+
+\subsection*{Formulations prudentes}
+
+Quand tu fais une revendication sur l'état de l'art, il faut rester prudent, il ne faut ni caricaturer les travaux existants, ni prétendre être le premier sur tout.. Deux formulations courantes sont correctes :
+\begin{itemize}
+    \item \textit{``to the best of our knowledge''}
+    \item \textit{``as far as we know''}
+\end{itemize}
+
+Il faut les utiliser quand elles sont justifiées, pas comme une formule automatique. Elles signalent une prudence raisonnable, pas une immunité contre l'erreur.
+
+
+\section{Problem Statement and Research Question}
+
+Avant de dérouler la solution, il est souvent utile de formuler clairement le problème traité. Cette partie peut être intégrée à l'introduction ou prendre une section séparée.
+
+Son rôle est de verrouiller le cadre. À ce stade, le lecteur doit savoir ce qui est donné, ce qui est cherché, sous quelles hypothèses, et avec quelles contraintes.
+
+Une bonne formulation ressemble souvent à cela :
+\begin{quote}
+Étant donné un système modélisé de telle manière, soumis à telles contraintes et à tel type d'actions adverses, nous cherchons à vérifier / optimiser / garantir telle propriété.
+\end{quote}
+
+Cette phrase paraît simple. Pourtant, elle force une discipline utile. Elle évite de dériver vers un objectif flou.
+
+Si ton papier contient des questions de recherche, elles doivent être peu nombreuses et bien ciblées. Deux ou trois vraies questions valent mieux qu'une liste de sous-objectifs reformulés artificiellement.
+
+\section{Core Sections: Model, Method, Theory, Algorithm, or System}
+
+Le cœur du papier se trouve souvent dans les sections 3, 4 et 5. C'est là que tu présentes ton modèle, ton idée principale, ta méthode, tes résultats théoriques, ton algorithme, ou ton système.
+
+Le risque ici est de tout mélanger. Un lecteur doit pouvoir distinguer sans effort :
+\begin{itemize}
+    \item ce qui relève du modèle ;
+    \item ce qui constitue la nouveauté ;
+    \item ce qui est prouvé ;
+    \item ce qui est implémenté ;
+    \item ce qui est observé expérimentalement.
+\end{itemize}
+
+
+\subsection*{Model or Formalization}
+
+Si tu proposes un modèle ou un formalisme, commence par bien définir les objets manipulés. Évite d'introduire trop de notations d'un coup. Une notation n'est pas gênante parce qu'elle est mathématique. Elle devient gênante quand elle arrive avant que le lecteur sache à quoi elle sert.
+
+Un bon ordre est souvent :
+\begin{enumerate}[label=\arabic*.]
+    \item intuition du modèle ;
+    \item composants formels ;
+    \item sémantique ;
+    \item exemple simple.
+\end{enumerate}
+
+L'exemple joue un rôle central. Il ne sert pas à faire joli. Il sert à ancrer les définitions.
+
+
+\subsection*{Main Contribution}
+
+C'est ici que tu présentes ce qui est réellement nouveau. Ce peut être une logique, une sémantique, une méthode de calcul, une traduction vers un autre modèle, une architecture, une stratégie, ou un mécanisme d'analyse.
+
+Le point important est le suivant : ne pas seulement décrire, mais justifier les choix. Si tu introduis un opérateur, une variable, une contrainte, ou une hypothèse, explique pourquoi elle est nécessaire.
+
+Par exemple, au lieu d'écrire :
+\begin{quote}
+Nous définissons ensuite un nouveau coût global.
+\end{quote}
+
+il vaut mieux écrire :
+\begin{quote}
+Nous introduisons ensuite un coût global afin de capturer en une seule quantité l'effet combiné du temps de succès, des ressources engagées et des perturbations induites par la défense.
+\end{quote}
+
+Dans le second cas, le lecteur comprend la fonction de la définition.
+
+
+\subsection*{Theory or Guarantees}
+
+Si ton papier contient des théorèmes, lemmes, propositions, ou résultats de complexité, il faut guider la lecture. Beaucoup de preuves sont techniquement correctes, mais pédagogiquement mal introduites.
+
+Une bonne habitude consiste à présenter pour chaque résultat :
+\begin{enumerate}[label=\arabic*.]
+    \item ce que dit l'énoncé ;
+    \item pourquoi c'est intéressant ;
+    \item sous quelles hypothèses cela tient ;
+    \item ce que cela change concrètement.
+\end{enumerate}
+
+Par exemple, avant un théorème de correction, une phrase simple peut suffire :
+\begin{quote}
+Le résultat suivant établit que la procédure proposée calcule exactement l'ensemble des états satisfaisant la formule.
+\end{quote}
+
+Avant une complexité :
+\begin{quote}
+Le théorème suivant précise le coût du model checking dans notre cadre et permet de comparer notre approche aux logiques voisines.
+\end{quote}
+
+\paragraph{Point important.}
+Évite les formulations du type \textit{``obviously''}, \textit{``clearly''}, \textit{``it is easy to see''} quand le point n'est pas réellement immédiat. Dans un papier, ce genre de mot peut agacer un reviewer. S'il faut réfléchir deux minutes, ce n'était pas obvious. De plus, tout ce que tu dis doit pouvoir etre prouver soit par une proof si math ou alors par une reference ou un resultat t'est pas meilleur par magie, faut le dire et le prouver, par exemple telle ref dis cela et realise cela, baser sur tout cela notre framework resout un probleme present dans telle references comme on peut le voir figure x nous pouvons.
+
+\subsection*{Implementation or System Design}
+
+Si le papier comporte une implémentation, distingue bien ce qui relève :
+\begin{itemize}
+    \item de l'idée ;
+    \item de sa traduction logicielle ;
+    \item de l'environnement expérimental.
+\end{itemize}
+
+C'est important, car un lecteur ne veut pas confondre une propriété du modèle avec une propriété d'une implémentation particulière.
+
+\section{Evaluation, Results, Comparison, and Analysis}
+
+Une contribution n'est crédible que si elle est évaluée par rapport à ce qu'elle promet. C'est une règle simple, mais fondamentale.
+
+Si tu annonces plus d'expressivité, il faut montrer des cas que les approches précédentes ne couvrent pas. Si tu annonces de meilleures performances, il faut mesurer le coût. Si tu annonces une meilleure précision, il faut montrer sur quoi elle repose. Si tu annonces un compromis mieux maîtrisé, il faut analyser ce compromis.
+
+Une bonne section d'évaluation ne se contente pas d'afficher des tableaux ou des figures. Elle explique :
+\begin{itemize}
+    \item pourquoi ces cas d'étude ont été choisis ;
+    \item pourquoi ces métriques sont pertinentes ;
+    \item pourquoi ces baselines sont les bonnes ;
+    \item ce que les résultats signifient vraiment.
+\end{itemize}
+
+\subsection*{Comparaison}
+
+Comparer ne veut pas dire dire ``nous sommes meilleurs'' ou afficher un super tableau très long et dire on fait mieux. Une comparaison sérieuse précise le cadre. Parfois, deux méthodes ne traitent pas exactement le même problème. Il faut alors le dire honnêtement. Il faut expliquer :
+\begin{itemize}
+    \item pourquoi les baselines choisies sont pertinentes ;
+    \item sur quels critères la comparaison est juste ;
+    \item dans quelles conditions la comparaison est réalisée ;
+    \item si certaines méthodes ne sont pas directement comparables.
+\end{itemize}
+
+Par exemple :
+\begin{quote}
+La comparaison avec X est partielle, car X ne prend pas en compte la contrainte temporelle considérée ici. Nous retenons néanmoins cette baseline pour comparer la partie probabiliste commune aux deux approches.
+\end{quote}
+
+Cette phrase inspire plus confiance qu'une comparaison forcée.
+
+\subsection*{Analyse}
+
+L'analyse est la partie la plus souvent sous-développée. Beaucoup montrent des résultats, mais ne les interprètent pas réellement.
+
+Une analyse utile doit répondre à des questions comme :
+\begin{itemize}
+    \item Pourquoi cette méthode marche-t-elle mieux ici ?
+    \item Pourquoi échoue-t-elle ou se dégrade-t-elle ailleurs ?
+    \item Quel est l'impact d'un paramètre ?
+    \item Quelle hypothèse semble la plus critique ?
+    \item Quels compromis apparaissent ?
+\end{itemize}
+
+\subsection*{Erreur fréquente}
+
+Dire simplement :
+\begin{quote}
+Les résultats montrent que notre méthode surpasse les autres.
+\end{quote}
+n'est pas suffisant.
+
+Une version plus utile serait :
+\begin{quote}
+Le gain observé provient surtout de la prise en compte explicite des transitions défensives, absentes des baselines. En revanche, lorsque la taille du modèle augmente fortement, le coût de calcul devient dominant, ce qui met en évidence une limite de passage à l'échelle.
+\end{quote}
+
+Ici, le résultat est interprété, pas seulement annoncé.
+
+\section{Discussion}
+
+La section \textbf{discussion} sert à prendre du recul. Elle est très utile quand ton papier repose sur des hypothèses fortes, quand il ouvre une direction nouvelle, ou quand les résultats ont une portée intéressante mais limitée.
+
+La discussion n'est pas une répétition des résultats. Elle sert à parler de ce que les résultats veulent dire, de ce qu'ils ne couvrent pas, et de ce qu'il faudrait encore faire pour aller plus loin.
+
+C'est souvent ici qu'on montre une vraie maturité scientifique. Reconnaître une limite ne fragilise pas forcément un papier. Au contraire, quand c'est fait proprement, cela le rend plus crédible.
+
+Exemple :
+\begin{quote}
+Notre modèle suppose ici un attaquant disposant d'une visibilité parfaite sur l'état logique du système, mais pas sur les paramètres dynamiques internes. Cette hypothèse est cohérente avec plusieurs scénarios étudiés dans la littérature, mais elle peut être trop forte ou trop faible selon le niveau de compromission considéré.
+\end{quote}
+
+Cette phrase montre que l'auteur sait exactement où se trouve la frontière de son cadre.
+
+
+\section{Conclusion and Future Work}
+
+
+La conclusion ferme l'article. Elle ne doit pas simplement répéter l'abstract. Elle doit laisser au lecteur une image nette du problème traité, de l'apport principal, et de ce qu'il faut retenir. Elle rappelle donc l'essentiel sans répéter mot pour mot l'introduction ou l'abstract.
+
+Une bonne conclusion répond sobrement à trois questions :
+\begin{itemize}
+    \item quel problème a été traité ;
+    \item qu'est-ce qui a été apporté ;
+    \item quelle est la portée réelle de cet apport.
+\end{itemize}
+
+La partie \textbf{Future Work} doit être réaliste. Elle ne doit pas contenir une liste artificielle de perspectives vagues.
+
+Bonnes perspectives :
+\begin{itemize}
+    \item extension naturelle du modèle ;
+    \item amélioration d'une hypothèse restrictive ;
+    \item passage à l'échelle ;
+    \item prise en compte d'un nouveau type de données ;
+    \item validation sur des cas plus réalistes ;
+    \item généralisation théorique ;
+    \item meilleure intégration pratique.
+\end{itemize}
+
+Par exemple :
+\begin{quote}
+Une extension naturelle de ce travail consiste à intégrer des observations partielles du défenseur, afin de raisonner sur des politiques adaptatives sous information incomplète.
+\end{quote}
+
+Mauvaises perspectives a ne pas dire :
+\begin{itemize}
+    \item \textit{``In future work, we will improve the method.''}
+    \item \textit{``Many things remain to be done.''}
+    \item \textit{``This work can be extended in several directions.''}
+\end{itemize}
+
+
+\section{Practical Writing Advice}
+
+\subsection*{1. One section, one function}
+
+Chaque section doit avoir une fonction claire. Si une section fait plusieurs choses à la fois, elle devient souvent confuse.
+
+\subsection*{2. One paragraph, one idea}
+
+Chaque paragraphe doit porter une idée principale. Un paragraphe n'est pas une accumulation de phrases.
+
+\subsection*{3. Announce before details}
+
+Avant une figure, un tableau, une définition ou un théorème, annonce pourquoi cet élément arrive à cet endroit. Une phrase de transition bien placée améliore énormément la lecture.
+
+\subsection*{4. Ne pas noyer la contribution}
+
+Ne noye pas ta nouveauté dans trop de contexte. La contribution doit apparaître tôt et clairement. Et rapide en clair dans les 5 premiere minute de lecture je dois comprendre, le context problem et ce que tu propose rapidement pour me donner envie de continuer. S'il lui faut attendre la page 4 pour le voir, c'est souvent trop tard.
+
+
+\subsection*{5. Sois précis dans tes affirmations}
+
+Ne revendique jamais plus que ce qui est montré. Si tu dis qu'une méthode est meilleure, précise sur quel axe. Si tu dis qu'elle est plus générale, explique en quel sens. Si tu dis qu'un résultat est significatif, donne la base qui permet de le dire.
+
+\subsection*{7. Utilisez les figures et les tableaux à dessein.}
+
+Une figure ou un tableau doit avoir une fonction argumentative. Il ne faut pas en mettre pour remplir l'espace. Surout pour les papier ayant des contrainte de pages une figure prend trop de place donc mettre que 1 a 2 mais tres explicative.
+
+\subsection*{8. Maintenir une terminologie stable}
+
+Un même concept doit garder le même nom tout au long du papier. Changer de vocabulaire sans raison technique crée de la confusion. pareil avec les notation ou varible si tu utilise telle lettre pour telle objet on change pas.
+
+
+\subsection*{Mots et expressions à éviter en anglais}
+
+Les erreurs ci-dessous reviennent souvent dans les papiers refusés, mal relus, ou simplement moins crédibles.
+Le problème n'est pas seulement stylistique. Ces expressions sont souvent vagues, trop fortes,
+imprécises, ou non démontrées. Dans un papier, il faut préférer des formulations qui décrivent
+exactement ce qui est montré, mesuré, prouvé, ou supposé.
+
+\begin{itemize}
+
+    \item \textit{``very important''} \\
+    Trop vague. Ne dit pas \emph{pourquoi} c'est important. \\
+    À la place : \textit{``relevant because ...''}, \textit{``important for ...''}, \textit{``critical in scenarios where ...''}
+
+    \item \textit{``novel''} ou \textit{``novel and efficient''} sans preuve \\
+    \textit{Novel} est souvent perçu comme une auto-évaluation. \textit{Efficient} ne veut rien dire sans coût, borne, ou mesure. \\
+    À la place : \textit{``we introduce ...''}, \textit{``we propose ...''}, \textit{``runs in polynomial time''}, \textit{``reduces runtime by X\%''}
+
+    \item \textit{``state-of-the-art''} sans référence ni axe précis \\
+    Expression promotionnelle si elle n'est pas définie. Il faut dire sur quel critère la comparaison est faite. \\
+    À la place : \textit{``outperforms recent baselines on ...''}, \textit{``matches the best reported results on ...''}, \textit{``compares favorably with ...''}
+
+    \item \textit{``revolutionary''}, \textit{``game-changing''}, \textit{``groundbreaking''} \\
+    Trop marketing. Rarement acceptable dans un article scientifique. \\
+    À la place : \textit{``extends ...''}, \textit{``improves ...''}, \textit{``enables ...''}, \textit{``provides a new way to ...''}
+
+    \item \textit{``perfect''}, \textit{``optimal''} sans cadre formel \\
+    \textit{Perfect} est presque toujours faux. \textit{Optimal} exige une fonction objectif et une preuve ou une référence claire. \\
+    À la place : \textit{``accurate within ...''}, \textit{``minimizes ... under ...''}, \textit{``near-optimal under ...''}
+
+    \item \textit{``obviously''}, \textit{``clearly''}, \textit{``of course''} \\
+    Mauvais signal rhétorique. Si c'est vraiment clair, la phrase ou la preuve doit le montrer sans insister. \\
+    À la place : supprimer le mot, ou écrire \textit{``from Definition 2, it follows that ...''}, \textit{``by construction ...''}, \textit{``as shown in Figure 3 ...''}
+
+    \item \textit{``it is easy to see that ...''} \\
+    Souvent irritant pour le lecteur si l'étape n'est pas immédiate. \\
+    À la place : \textit{``the key observation is that ...''}, \textit{``the result follows from ...''}, \textit{``we now show that ...''}
+
+    \item \textit{``somehow''}, \textit{``more or less''}, \textit{``kind of''} \\
+    Marque une imprécision ou une hésitation mal contrôlée. \\
+    À la place : \textit{``approximately''}, \textit{``within ...''}, \textit{``partially''}, \textit{``under the assumption that ...''}
+
+    \item \textit{``a lot of''}, \textit{``many''}, \textit{``several''} quand une quantité peut être donnée \\
+    Trop flou si une mesure, un ordre de grandeur, ou une borne est disponible. \\
+    À la place : \textit{``X datasets''}, \textit{``in most cases''}, \textit{``in 17 out of 20 runs''}, \textit{``for a large subset of ...''}
+
+    \item \textit{``proved''} pour un résultat expérimental \\
+    \textit{Prove} est réservé aux résultats mathématiques ou logiques. Une expérience soutient, suggère, montre, ou indique. \\
+    À la place : \textit{``the experiments show that ...''}, \textit{``the results indicate that ...''}, \textit{``the data support ...''}
+
+    \item \textit{``robust''} sans préciser à quoi \\
+    Un système n'est pas robuste dans l'absolu. Il l'est face à un type de variation, de bruit, d'attaque, ou de changement d'hypothèse. \\
+    À la place : \textit{``remains effective under ...''}, \textit{``is insensitive to ...''}, \textit{``degrades gracefully when ...''}
+
+    \item \textit{``significant''} sans sens statistique ou analytique défini \\
+    Mot dangereux. Il peut vouloir dire important, notable, ou statistiquement significatif. Il faut choisir. \\
+    À la place : \textit{``statistically significant ($p<0.05$)''}, \textit{``substantial''}, \textit{``noticeable''}, \textit{``non-negligible''}
+
+    \item \textit{``substantial improvement''}, \textit{``considerable gain''} sans chiffre \\
+    Ces adjectifs doivent être soutenus par une valeur, une borne, ou une comparaison claire. \\
+    À la place : \textit{``improves accuracy by 6.4 points''}, \textit{``reduces cost by 23\%''}
+
+    \item \textit{``works well''}, \textit{``performs well''} \\
+    Ne dit pas selon quelle métrique ni par rapport à quoi. \\
+    À la place : \textit{``achieves an F1-score of ...''}, \textit{``reduces false positives compared with ...''}, \textit{``satisfies the specification on ...''}
+
+    \item \textit{``better''}, \textit{``stronger''}, \textit{``more expressive''} sans point de comparaison \\
+    Un comparatif exige un référent explicite. \\
+    À la place : \textit{``more expressive than CTL with respect to ...''}, \textit{``stronger than the baseline under ...''}
+
+    \item \textit{``all''}, \textit{``every''}, \textit{``always''}, \textit{``never''} sans justification stricte \\
+    Les quantificateurs universels sont risqués. Ils rendent une phrase fausse au moindre contre-exemple. \\
+    À la place : \textit{``in all evaluated cases''}, \textit{``for every state in $Q$''}, \textit{``under Assumptions 1--3''}, \textit{``in the considered setting''}
+
+    \item \textit{``the literature shows that ...''} sans citation ciblée \\
+    Trop large et peu vérifiable. \\
+    À la place : \textit{``recent work on ... shows that ...''}, \textit{``prior studies \cite{...,...} report ...''}
+
+    \item \textit{``we believe''}, \textit{``we think''}, \textit{``we feel''} \\
+    Dans un article, l'argument doit reposer sur preuve, référence, définition, ou résultat. \\
+    À la place : \textit{``we hypothesize that ...''}, \textit{``we conjecture that ...''}, \textit{``these results suggest that ...''}
+
+    \item \textit{``interesting''} \\
+    Mot vide si tu ne dis pas ce qui rend le point intéressant. \\
+    À la place : \textit{``non-trivial''}, \textit{``unexpected''}, \textit{``useful because ...''}, \textit{``relevant for ...''}
+
+    \item \textit{``quite''}, \textit{``rather''}, \textit{``fairly''} \\
+    Atténuateurs flous. Ils n'ajoutent pas d'information mesurable. \\
+    À la place : supprimer, ou remplacer par une mesure, un seuil, ou une qualification précise.
+
+    \item \textit{``in order to''} quand \textit{``to''} suffit \\
+    Tour plus long sans gain de sens. \\
+    À la place : \textit{``to evaluate ...''}, \textit{``to compute ...''}
+
+    \item \textit{``due to the fact that''} \\
+    Formulation lourde. \\
+    À la place : \textit{``because''}, \textit{``since''}
+
+    \item \textit{``it was found that''} \\
+    Tournure impersonnelle souvent inutilement lourde. \\
+    À la place : \textit{``we found that ...''}, \textit{``the analysis shows that ...''}
+
+    \item \textit{``gives insight into''} sans contenu concret \\
+    Souvent trop abstrait si tu ne précises pas quel insight. \\
+    À la place : \textit{``reveals the impact of ...''}, \textit{``identifies the role of ...''}, \textit{``shows how ... affects ...''}
+
+    \item \textit{``handles real-world scenarios''} sans description des scénarios \\
+    Formulation fréquente mais creuse si les cas étudiés ne sont pas décrits. \\
+    À la place : \textit{``evaluated on automotive network topologies derived from ...''}, \textit{``tested on scenarios including ...''}
+
+    \item \textit{``to the best of our knowledge''} utilisé partout \\
+    Formule acceptable, mais seulement pour une revendication bibliographique prudente. Elle ne doit pas remplacer une vraie related work. \\
+    À la place : \textit{``to the best of our knowledge, no prior work combines ...''} seulement si la phrase est ciblée et défendable.
+
+\end{itemize}
+
+\subsection*{Preferred Style}
+
+En règle générale, préfère des verbes concrets et vérifiables :
+\begin{itemize}
+    \item \textit{``define''}
+    \item \textit{``formalize''}
+    \item \textit{``model''}
+    \item \textit{``prove''} (seulement pour un résultat formel)
+    \item \textit{``show''}
+    \item \textit{``demonstrate''}
+    \item \textit{``indicate''}
+    \item \textit{``suggest''}
+    \item \textit{``measure''}
+    \item \textit{``compare''}
+    \item \textit{``quantify''}
+    \item \textit{``bound''}
+    \item \textit{``capture''}
+    \item \textit{``support''}
+    \item \textit{``enable''}
+\end{itemize}
+
+
+\section{L'IA au service de l'écriture ?}
+
+L'IA peut aider pour le choix des mots, la grammaire, le raccourcissement, et les réécritures locales. Elle peut faire gagner du temps. Elle peut aussi nuire à un article si elle est utilisée sans contrôle.
+
+Le problème principal n'est pas que l'IA écrit mal. Le problème principal est qu'elle écrit souvent de manière \emph{fluide} tout en masquant un contenu faible. Le texte semble propre, mais le raisonnement peut être vague, répétitif, ou excessif.
+
+En pratique, une écriture assistée par IA devient visible par des signaux répétés.
+
+\subsection*{1. Prose trop lissée}
+
+L'IA produit souvent un texte trop uniforme. Les paragraphes ont le même rythme.
+Les transitions paraissent soignées, mais elles apportent peu. Le texte devient facile à lire au niveau des phrases et faible au niveau de l'argumentation.
+
+Les signes typiques sont :
+\begin{itemize}
+    \item des formules de transition répétées ;
+    \item des modèles de phrases répétés ;
+    \item une structure de paragraphe équilibrée mais vide ;
+    \item des affirmations prudentes en apparence mais qui disent peu.
+\end{itemize}
+
+Par exemple, l'IA transforme souvent une phrase directe en une phrase alourdie.
+
+Faible :
+\begin{quote}
+It is worth noting that this result is interesting because it provides useful insight into the system.
+\end{quote}
+
+Mieux :
+\begin{quote}
+This result shows how defense timing changes attack success.
+\end{quote}
+
+\subsection*{2. Phrases de remplissage}
+
+L'IA ajoute souvent des phrases qui prennent de la place sans apporter d'information.
+Ces phrases rendent le texte plus long et plus artificiel.
+
+Exemples fréquents :
+\begin{itemize}
+    \item \textit{``It is worth noting that ...''}
+    \item \textit{``It is important to note that ...''}
+    \item \textit{``One can observe that ...''}
+    \item \textit{``Overall, this highlights the fact that ...''}
+    \item \textit{``From this perspective, ...''}
+    \item \textit{``In today's rapidly evolving landscape, ...''}
+\end{itemize}
+
+Ces phrases doivent en général être supprimées, pas réécrites.
+
+Faible :
+\begin{quote}
+It is important to note that our model is useful in the context of dynamic defense.
+\end{quote}
+
+Mieux :
+\begin{quote}
+Our model captures dynamic defense decisions.
+\end{quote}
+
+\subsection*{3. Mots surutilisés}
+
+L'IA a tendance à surutiliser certains mots parce qu'ils sonnent académiques.
+Un mot isolé ne prouve rien. Le problème vient de la répétition.
+
+Exemples fréquents :
+\begin{itemize}
+    \item \textit{``delve''}
+    \item \textit{``underscore''}
+    \item \textit{``notably''}
+    \item \textit{``particularly''}
+    \item \textit{``comprehensive''}
+    \item \textit{``crucial''}
+    \item \textit{``enhancing''}
+    \item \textit{``intricate''}
+    \item \textit{``meticulous''}
+    \item \textit{``boast''}
+\end{itemize}
+
+Le problème n'est pas le mot en lui-même. Le problème est un texte qui repose sur ce type de vocabulaire toutes les quelques lignes.
+
+Une règle simple aide : si un mot sonne académique mais n'apporte pas de précision, remplace-le par un mot plus clair ou retire-le.
+
+\subsection*{4. Affirmations fortes avec soutien faible}
+
+L'IA produit souvent des phrases assurées même quand les preuves manquent.
+C'est dangereux dans l'écriture scientifique.
+
+Schémas faibles fréquents :
+\begin{itemize}
+    \item \textit{``Our novel and efficient method significantly improves robustness.''}
+    \item \textit{``This clearly proves that the approach is better.''}
+    \item \textit{``The framework provides a powerful and comprehensive solution.''}
+\end{itemize}
+
+Ces phrases sonnent scientifiques, mais elles sont faibles. Elles contiennent des affirmations sans métrique, sans baseline, ou sans notion définie.
+
+Mieux :
+\begin{quote}
+We propose a new procedure. On the evaluated benchmarks, it reduces runtime by 18\% compared with the baseline and remains effective under bounded observation noise.
+\end{quote}
+
+\subsection*{5. Exemples génériques}
+
+L'IA donne souvent des exemples techniquement acceptables mais trop génériques. Ils n'aident pas le lecteur à comprendre la contribution réelle.
+
+Faible :
+\begin{quote}
+For example, this method can be useful in many real-world applications.
+\end{quote}
+
+Mieux :
+\begin{quote}
+For example, in an in-vehicle network, the method can compare two defense schedules under bounded attacker progress.
+\end{quote}
+
+Un bon exemple doit rendre l'article plus concret. Il ne doit pas seulement confirmer que le sujet est large.
+
+\subsection*{6. Structure répétée}
+
+L'IA écrit souvent des paragraphes avec la même forme interne :
+phrase de contexte, affirmation large, transition souple, conclusion générale.
+Un paragraphe peut être acceptable. Cinq d'affilée rendent le texte artificiel.
+
+Un article ne doit pas sonner de manière mécaniquement régulière. La structure doit suivre le raisonnement, pas un modèle.
+
+\subsection*{7. Gestion faible des références}
+
+L'IA est particulièrement risquée avec les références.
+Elle peut :
+\begin{itemize}
+    \item inventer des articles ;
+    \item fusionner des détails provenant de différents articles ;
+    \item produire de mauvais auteurs, titres, années, ou lieux de publication ;
+    \item citer un vrai article pour une mauvaise affirmation.
+\end{itemize}
+
+C'est l'une des façons les plus simples d'endommager la crédibilité d'un manuscrit.
+
+Une règle simple est obligatoire :
+ne fais jamais confiance à une référence générée par IA avant d'avoir vérifié la vraie source.
+
+\subsection*{8. Perte de la voix de l'auteur}
+
+Quand l'IA réécrit trop, l'article perd sa propre voix.
+La terminologie devient plus plate.
+Le ton devient uniforme.
+Le texte cesse de ressembler à un chercheur qui défend un argument précis et commence à ressembler à un résumé générique.
+
+Cela se voit souvent quand :
+\begin{itemize}
+    \item toutes les sections utilisent le même ton ;
+    \item toutes les transitions semblent interchangeables ;
+    \item le texte devient correct mais générique ;
+    \item les distinctions techniques deviennent plus faibles après réécriture.
+\end{itemize}
+
+\subsection*{Règle pratique}
+
+Utilise l'IA localement, pas globalement.
+
+Bon usage :
+\begin{itemize}
+    \item raccourcir un paragraphe ;
+    \item enlever des répétitions ;
+    \item améliorer la grammaire ;
+    \item réécrire une phrase peu claire ;
+    \item proposer des alternatives pour un titre ou une légende faibles.
+\end{itemize}
+
+Mauvais usage :
+\begin{itemize}
+    \item générer une section entière et la garder presque inchangée ;
+    \item demander des références et les copier directement ;
+    \item laisser l'IA réécrire des définitions techniques ou des idées de preuve sans vérifier chaque mot ;
+    \item utiliser un texte produit par IA quand tu ne peux pas défendre toi-même chaque phrase.
+\end{itemize}
+
+\subsection*{Test de relecture}
+
+Après toute réécriture assistée par IA, pose-toi cinq questions simples :
+\begin{itemize}
+    \item Est-ce que cette phrase ajoute une information précise ?
+    \item Est-ce que je peux défendre chaque affirmation qu'elle contient ?
+    \item Est-ce que la formulation est plus courte et plus claire, ou seulement plus fluide ?
+    \item Est-ce que cela ressemble encore à mon article ?
+    \item Est-ce que j'écrirais moi-même cette phrase si je devais l'expliquer à l'oral ?
+\end{itemize}
+
+Si la réponse est non, réécris la phrase à la main.
+
+\end{document}
