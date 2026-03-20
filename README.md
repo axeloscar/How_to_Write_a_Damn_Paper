@@ -1,2 +1,8 @@
-# How-to-Write-a-Damm-Paper
-A practical PhD guide to writing clear, credible, and well-structured research papers, with advice on common mistakes, style, reviewer expectations, and AI-related writing pitfalls.
+# PhD Survival Guide to Writing a Relevant Paper Without Annoying Your Reviewer
+
+This repository contains a LaTeX guide on how to write a clear, structured, and credible scientific paper.
+
+Source LaTeX: [`guide.tex`](./guide.tex)
+
+Compiled PDF: [`guide.pdf`](./guide.pdf)
+
